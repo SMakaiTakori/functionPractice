@@ -34,9 +34,11 @@
     <script>
 
         var btn = document.querySelector('button');
-        btn.onclick = displayMessage;
+        btn.onclick = function(){
+            displayMessage('I can put any text that I want in here!');
+        };
 
-        function displayMessage(){
+        function displayMessage(msgText, msgType){
         var html = document.querySelector('html');    //DOM API function to select html and store a reference to it in a variable called html
 
         var panel = document.createElement('div');
@@ -44,7 +46,7 @@
         html.appendChild(panel);
 
         var msg = document.createElement('p');
-        msg.textContent = 'This is a message box';
+        msg.textContent = msgText;
         panel.appendChild(msg);
 
         var closeBtn = document.createElement('button');
@@ -53,11 +55,8 @@
       
         closeBtn.onclick = function() {
           panel.parentNode.removeChild(panel);
-        }              
-             
+        }             
       }
-
-
 
     </script>
   </body>
