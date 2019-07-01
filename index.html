@@ -32,7 +32,11 @@
     <button>Display message box</button>
 
     <script>
-      function displayMessage(){
+
+        var btn = document.querySelector('button');
+        btn.onclick = displayMessage;
+
+        function displayMessage(){
         var html = document.querySelector('html');    //DOM API function to select html and store a reference to it in a variable called html
 
         var panel = document.createElement('div');
@@ -46,11 +50,15 @@
         var closeBtn = document.createElement('button');
         closeBtn.textContent = 'x';
         panel.appendChild(closeBtn);
-
+      
         closeBtn.onclick = function() {
           panel.parentNode.removeChild(panel);
-        }            
+        }              
+             
       }
+
+
+
     </script>
   </body>
 </html>
